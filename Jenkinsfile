@@ -3,7 +3,7 @@ def DockerTag() {
 	return tag
 	}
 pipeline {
-  agent {Label 'master'}
+  agent {label 'master'}
   environment {
       registry = "dmukkapa/coreapi"
       DOCKER_TAG=DockerTag()
