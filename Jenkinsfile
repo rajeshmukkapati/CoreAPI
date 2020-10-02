@@ -16,8 +16,8 @@ pipeline {
         }
          stage('Building Docker image'){
             steps{
-               sh 'cd CoreAPI'
-               sh 'docker build -t ${registry}:${DOCKER_TAG} -f CoreAPI/Dockerfile .'
+             sh '''cd CoreAPI
+		   docker build -t ${registry}:${DOCKER_TAG}  .'''
             }
         }
         stage('Push Docker Image'){
