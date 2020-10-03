@@ -8,6 +8,10 @@ pipeline {
       registry = "dmukkapa/coreapi"
       DOCKER_TAG=DockerTag()
     } 
+	options {
+	  timestamps
+	  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '5')
+	}
     stages {
         stage('Git CheckOut') {
             steps {
